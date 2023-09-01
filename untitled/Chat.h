@@ -45,7 +45,8 @@ public:
 	void login(std::string login, std::string password);
     void writeToOne(std::string text, std::shared_ptr<User>);
 	void writeToAll(const std::string text);
-	bool isLoginExist(const std::string& login);
+    bool isLoginExist(const std::string& login);
+    bool isDisabled(const std::string& login);
 	std::shared_ptr <User> getActiveUser();
     std::shared_ptr <User> getUser(const std::string login);
     QStringList getAllLogins();

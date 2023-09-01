@@ -35,6 +35,10 @@ private slots:
 
     void on_unBanBat_clicked();
 
+    void on_enableButton_clicked();
+
+    void on_disableButton_clicked();
+
 private:
     void fillComboBox();
     void fillMessagesForAll(QStringList messages = QStringList());

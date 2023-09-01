@@ -422,3 +422,11 @@ void Chat::banUser(const std::string name){
 void Chat::unBanUser(const std::string name){
     _database->queryResult(QString::fromStdString( std::string("update users set banned='F' where login='") + name + "'"));
 }
+
+void Chat::disableUser(const std::string name){
+    _database->queryResult(QString::fromStdString( std::string("update users set disabled='T' where login='") + name + "'"));
+}
+
+void Chat::enableUser(const std::string name){
+    _database->queryResult(QString::fromStdString( std::string("update users set disabled='F' where login='") + name + "'"));
+}

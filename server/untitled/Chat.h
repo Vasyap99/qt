@@ -60,4 +60,6 @@ public:
     QStringList getMessages(bool isPrivate, QString login = "");
     void banUser(const std::string name);
     void unBanUser(const std::string name);
+    void disableUser(const std::string name);
+    void enableUser(const std::string name);
 };

@@ -153,3 +153,19 @@ void MainWindow::on_unBanBat_clicked()
     _chat->unBanUser(q);
 }
 
+
+void MainWindow::on_enableButton_clicked()
+{
+    std::string q=ui->usersBox->currentText().toStdString();
+    std::cout << "query:" << q << std::endl;
+    _chat->enableUser(q);
+}
+
+
+void MainWindow::on_disableButton_clicked()
+{
+    std::string q=ui->usersBox->currentText().toStdString();
+    std::cout << "query:" << q << std::endl;
+    _chat->disableUser(q);
+}
+

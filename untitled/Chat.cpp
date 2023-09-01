@@ -98,8 +98,8 @@ void Chat::setActiveUser(const std::shared_ptr<User>& user)
 
 void Chat::login(std::string login, std::string password)
 {
-	bool found = isLoginExist(login);
-	if (!found)
+    bool found = isLoginExist(login);
+    if (!found || isDisabled(login))
 		throw BadLogin();
 	for (auto& it : _users)
 	{
@@ -111,6 +111,16 @@ void Chat::login(std::string login, std::string password)
 				throw BadPassword();
 		}
 	}
+}
+
+bool Chat::isDisabled(const std::string& login){
+    if (_database->hasConnection()) {
+        std::string query = "SELECT disabled FROM users WHERE login LIKE '" + login + "';";
+        QVector<QString> ids = _database->queryResult(QString::fromStdString(query));
+        std::string disabled = ids.at(0).toStdString();
+        return disabled=="T";
+    }
+    return false;
 }
 
 void Chat::writeToOne(std::string text, std::shared_ptr<User> recipient)

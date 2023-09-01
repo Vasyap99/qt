@@ -42,6 +42,30 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="disableButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>disableUser</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="enableButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>enableUser</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QComboBox" name="usersBox">
         <property name="font">
          <font>
